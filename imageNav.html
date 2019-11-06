@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<link rel="stylesheet" href="custom.css" />
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		/>
+	</head>
+	<body>
+		<div id="images_collection" style="display:none">
+			<img
+				src="images/1.png"
+				class="screenshot_size"
+				alt="portfolio-image"
+			/>
+
+			<img
+				src="images/3.png"
+				class="screenshot_size"
+				alt="portfolio-image"
+			/>
+
+			<img
+				src="images/4.png"
+				class="screenshot_size"
+				alt="portfolio-image"
+			/>
+
+			<img
+				src="images/5.png"
+				class="screenshot_size"
+				alt="portfolio-image"
+			/>
+
+			<img
+				src="images/6.png"
+				class="screenshot_size"
+				alt="portfolio-image"
+			/>
+
+			<img
+				src="images/7.png"
+				class="screenshot_size"
+				alt="portfolio-image"
+			/>
+		</div>
+		<div id="horizontal_scroll"></div>
+		<br />
+		<div id="navigation_scroll"></div>
+	</body>
+	<script src="imageNav.js"></script>
+	<script>
+		var data = {
+			btnPrevClasses: "btn btn-secondary",
+			btnNextClasses: "btn btn-secondary",
+			imagesPerRow: 3
+		};
+		populateImageScroll(data);
+	</script>
+</html>
