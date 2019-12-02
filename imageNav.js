@@ -3,7 +3,11 @@ var currentIndex_gli = 0;
 
 const smScreen_gli = 430;
 const mdScreen_gli = 675;
+
 const default_images_num_gli = 3;
+
+const default_row_class_gli = "row text-center";
+const default_col_class_gli = "col";
 
 function addNavButtons(btnPrevClasses, btnNextClasses) {
 	var navigation_scroll_gli = document.getElementById("navigation_scroll");
@@ -67,13 +71,13 @@ function populateImageScroll(data = null) {
 
 	var array_gli = [];
 	for (var i = 0; i < num_loop_gli; i++) {
-		var result_gli = '<div class="row text-center">';
+		var result_gli = `<div class="${default_row_class_gli}">`;
 		for (
 			var k = i * images_per_page_gli;
 			k < images_per_page_gli * (i + 1);
 			k++
 		) {
-			result_gli += `<div class="col">
+			result_gli += `<div class="${default_col_class_gli}">
                                 ${images_gli[k].outerHTML}
                             </div>`;
 		}
@@ -82,18 +86,18 @@ function populateImageScroll(data = null) {
 	}
 
 	if (uneven_gli != 0) {
-		var result_gli = '<div class="row text-center">';
+		var result_gli = `<div class="${default_row_class_gli}">`;
 		for (
 			var i = images_gli.length - uneven_gli;
 			i < images_gli.length;
 			i++
 		) {
-			result_gli += `<div class="col">
+			result_gli += `<div class="${default_col_class_gli}">
                                     ${images_gli[i].outerHTML}
                                 </div>`;
 		}
 		for (var i = 0; i < images_per_page_gli - uneven_gli; i++) {
-			result_gli += `<div class="col">
+			result_gli += `<div class="${default_col_class_gli}">
 		                        </div>`;
 		}
 		result_gli += "</div>";
@@ -111,8 +115,14 @@ function populateImageScroll(data = null) {
 		if (previous_gli.disabled == true) {
 			previous_gli.disabled = false;
 		}
-		if (currentIndex_gli == num_loop_gli - 1) {
-			next_gli.disabled = true;
+		if (uneven_gli == 0) {
+			if (currentIndex_gli == num_loop_gli - 1) {
+				next_gli.disabled = true;
+			}
+		} else {
+			if (currentIndex_gli == num_loop_gli) {
+				next_gli.disabled = true;
+			}
 		}
 		horizontal_scroll_gli.innerHTML = array_gli[currentIndex_gli];
 	});
