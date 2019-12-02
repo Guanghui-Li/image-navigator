@@ -12,41 +12,51 @@
 		/>
 	</head>
 	<body>
-		<div id="images_collection" style="display:none">
+		<div id="images_collection">
 			<img
-				src="images/1.png"
+				src="https://source.unsplash.com/random"
 				class="screenshot_size"
-				alt="portfolio-image"
+				alt="random"
 			/>
 
 			<img
-				src="images/3.png"
+				src="https://source.unsplash.com/400x600/?weather"
 				class="screenshot_size"
-				alt="portfolio-image"
+				alt="weather"
 			/>
 
 			<img
-				src="images/4.png"
+				src="https://source.unsplash.com/400x600/?sky"
 				class="screenshot_size"
-				alt="portfolio-image"
+				alt="sky"
 			/>
 
 			<img
-				src="images/5.png"
+				src="https://source.unsplash.com/400x600/?sauce"
 				class="screenshot_size"
-				alt="portfolio-image"
+				alt="sauce"
 			/>
 
 			<img
-				src="images/6.png"
+				src="https://source.unsplash.com/400x600/?technology"
 				class="screenshot_size"
-				alt="portfolio-image"
+				alt="technology"
+			/>
+			<img
+				src="https://source.unsplash.com/400x600/?animal"
+				class="screenshot_size"
+				alt="animal"
 			/>
 
 			<img
-				src="images/7.png"
+				src="https://source.unsplash.com/400x600/?fruit"
 				class="screenshot_size"
-				alt="portfolio-image"
+				alt="fruit"
+			/>
+			<img
+				src="https://source.unsplash.com/400x600/?food"
+				class="screenshot_size"
+				alt="food"
 			/>
 		</div>
 		<div id="horizontal_scroll"></div>
@@ -58,7 +68,11 @@
 		var data = {
 			btnPrevClasses: "btn btn-secondary",
 			btnNextClasses: "btn btn-secondary",
-			imagesPerRow: 3
+			screenSize: {
+				sm: 1,
+				md: 2,
+				lg: 3
+			}
 		};
 		populateImageScroll(data);
 	</script>
